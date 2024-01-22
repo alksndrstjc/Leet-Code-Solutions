@@ -1,0 +1,26 @@
+package ArraysAndHashing;
+
+public class NumberOfStepsToZero {
+
+    public static void main(String[] args) {
+        System.out.println(numberOfSteps(14));
+    }
+
+    //TODO: Given an integer num, return the number of steps to reduce it to zero.
+    //
+    //In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+    public static int numberOfSteps(int num) {
+        int steps = 0;
+
+        while (num != 0) {
+            if (num % 2 != 0) {
+                num--;
+                if (num != 0) steps++;
+            }
+            num = num / 2;
+            steps++;
+        }
+
+        return steps;
+    }
+}
